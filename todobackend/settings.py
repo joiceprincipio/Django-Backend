@@ -27,9 +27,9 @@ SECRET_KEY = 'django-insecure-wdc+(1la4f&jzu#bmrv7giz=z1qnwp2=*1phwlusa$j*%7%hz)
 DEBUG = False
 
 ALLOWED_HOSTS = [
-"todobackend.onrender.com",
+"django-backend-nb2g.onrender.com",
 "127.0.0.1",
-"localhost"
+"localhost",
 ]
 
 
@@ -91,10 +91,6 @@ DATABASES = {
 }
 
 
-
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -129,7 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
