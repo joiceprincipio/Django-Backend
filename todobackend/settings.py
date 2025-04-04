@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-wdc+(1la4f&jzu#bmrv7giz=z1qnwp2=*1phwlusa$j*%7%hz)
 DEBUG = False
 
 ALLOWED_HOSTS = [
-"todobackend.onrender.com",
+"django-backend-nb2g.onrender.com",
 "127.0.0.1",
 "localhost"
 ]
@@ -138,6 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://joiceprincipio.github.io"
 ]
 
 CORS_ALLOW_ALL_ORIGIN = True
