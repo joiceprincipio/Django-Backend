@@ -16,15 +16,16 @@ def todos(request):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['PUT', 'PATCH', 'DELETE'])  # <-- add PATCH here
 def update(request, pk):
     try:
         task = Todo.objects.get(pk=pk)
     except Todo.DoesNotExist:
         return Response(status=404)
 
-    if request.method == 'PUT':
-        serializer = TaskSerializers(task, data=request.data)
+    if request.method in ['PUT', 'PATCH']:  # <-- handle both methods
+        partial = request.method == 'PATCH'
+        serializer = TaskSerializers(task, data=request.data, partial=partial)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
